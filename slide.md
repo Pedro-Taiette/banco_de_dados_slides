@@ -8,7 +8,8 @@ paginate: true
 # color: #ffffffcc
 ---
 
-# A dinâmica entre DDL, DML e DQL na evolução de bancos relacionais e sistemas NoSQL
+# A Interdependência de DDL, DML e DQL 
+## Evolução em Bancos Relacionais e Sistemas NoSQL
 
 **Pedro Taiette Sato Librais (2000373)**
 **Thiago Henrique do Rego (2002255)**  
@@ -211,10 +212,8 @@ Evita falhas e inconsistências.
 
 * Date (2004)
 * Elmasri & Navathe (2016)
-* Silberschatz, Korth & Sudarshan (2012)
 * Sadalage & Fowler (2012)
 
 <br><br>
-<span style="font-size: 0.5rem; opacity: 0.5;">
 Obrigado Éttore por nos apresentar o Marp :) 
 </span>
