@@ -216,9 +216,8 @@ Evita falhas e inconsistências.
 
 # Referências
 
-* Date (2004)
-* Elmasri & Navathe (2016)
-* Sadalage & Fowler (2012)
-
+* DATE, C. J. Introdução a sistemas de bancos de dados. 8. ed. Rio de Janeiro: Elsevier, 2004.
+* ELMASRI, R.; NAVATHE, S. Sistemas de banco de dados. 6. ed. São Paulo: Pearson, 2011.
+* SADALAGE, P. J.; FOWLER, M. NoSQL distilled: a brief guide to the emerging world of polyglot persistence. Boston: Addison-Wesley, 2012.
 <br><br>
 * Obrigado Éttore por nos apresentar o Marp :) 
