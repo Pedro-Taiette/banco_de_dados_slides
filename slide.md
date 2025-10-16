@@ -2,30 +2,28 @@
 marp: true
 theme: gaia
 # class: invert
-# paginate: true
-size: 16:9
+paginate: true
+# size: 16:9
 # backgroundColor: #000000ff
 # color: #ffffffcc
 ---
 
-<!-- CAPA -->
+# A dinâmica entre DDL, DML e DQL na evolução de bancos relacionais e sistemas NoSQL
 
-# DDL, DML e DQL no ciclo de vida de bancos relacionais e sua relação com NoSQL
-
-
-**Pedro Taiette Sato Libras (2000373)**  
+**Pedro Taiette Sato Librais (2000373)**
 **Thiago Henrique do Rego (2002255)**  
+
 UNIMAR – 2025
 
 ---
 
 # Agenda
 
-1. Contexto geral  
-2. Conceitos de DDL, DML e DQL  
-3. Exemplos práticos  
-4. Ciclo de vida do banco de dados  
-5. Relação com NoSQL  
+1. Contexto  
+2. Conceitos  
+3. Exemplos  
+4. Ciclo de vida  
+5. SQL x NoSQL  
 6. Boas práticas  
 7. Conclusão
 
@@ -33,76 +31,72 @@ UNIMAR – 2025
 
 # 1. Contexto
 
-- Bancos de dados são base crítica em sistemas modernos  
-- SQL é o padrão para estrutura, manipulação e consulta  
-- Três subconjuntos essenciais:
-  - **DDL** – estrutura
-  - **DML** – manipulação
-  - **DQL** – consulta
+- Bancos de dados são base crítica
+- SQL é padrão dominante
+- Três subconjuntos centrais:
+  - **DDL** — estrutura
+  - **DML** — manipulação
+  - **DQL** — consulta
 
-Objetivo: mostrar o papel de cada linguagem e comparar com NoSQL
+Objetivo: explicar o papel de cada linguagem e mostrar a relação com NoSQL.
 
 ---
 
 # 2. Subconjuntos da SQL
 
-| Subconjunto | Foco        | Uso principal          |
-|-------------|-------------|-------------------------|
-| **DDL**     | Estrutura   | Criação e mudanças     |
-| **DML**     | Dados       | Rotina operacional     |
-| **DQL**     | Consulta    | Apoio à decisão        |
+| Subconjunto | Foco        | Uso principal      |
+|-------------|-------------|---------------------|
+| **DDL**     | Estrutura   | Criação e mudanças |
+| **DML**     | Dados       | Uso operacional     |
+| **DQL**     | Consulta    | Projeção e Busca    |
 
-Todos se complementam e aparecem em momentos distintos.
+Eles se complementam em momentos diferentes.
 
 ---
 
 # DDL — Definição de Estrutura
 
-Comandos principais:  
-`CREATE`, `ALTER`, `DROP`
+Comandos: `CREATE`, `ALTER`, `DROP`
 
 Responsável por:
 
-- Criar tabelas e restrições
-- Definir tipos de dados
-- Estrutura inicial e ajustes
-
-Impacto direto em desempenho e integridade.
+- Criar tabelas e restrições  
+- Definir tipos e chaves  
+- Estabelecer desempenho e integridade do banco
 
 ---
 
 # DML — Manipulação de Dados
 
-Comandos principais:  
-`INSERT`, `UPDATE`, `DELETE`
+Comandos: `INSERT`, `UPDATE`, `DELETE`
 
 Utilizado para:
 
-- Inserção de registros
-- Atualização de informações
-- Remoção de dados
+- Inserir registros  
+- Atualizar informações  
+- Remover dados
 
-Base das operações diárias.
+Base das operações rotineiras em um sistema.
 
 ---
 
 # DQL — Leitura e Consulta
 
-Comando principal:  
-`SELECT`
+Comando principal: `SELECT`
 
 Usado em:
 
-- Relatórios
-- Auditorias
-- Apoio à decisão
+- Relatórios  
+- Auditorias  
+- Extração de informação
 
-Foco em transformação de dados em informação.
+Transforma dados em conhecimento.
 
 ---
 
 # 3. Exemplos em PostgreSQL
 
+### DDL
 ```sql
 CREATE TABLE Animal (
   id SERIAL PRIMARY KEY,
@@ -111,11 +105,16 @@ CREATE TABLE Animal (
   data_nascimento DATE
 );
 ````
+---
+
+### DML
 
 ```sql
 INSERT INTO Animal (nome, especie, data_nascimento)
 VALUES ('Estrela', 'Bovina', '2021-03-15');
 ```
+
+### DQL
 
 ```sql
 SELECT nome, especie
@@ -125,34 +124,19 @@ WHERE data_nascimento > '2020-01-01';
 
 ---
 
-# Comparação com SQL Server
+# 4. Ciclo de vida do banco
 
-```sql
-CREATE TABLE Animal (
-  id INT IDENTITY(1,1) PRIMARY KEY,
-  nome VARCHAR(80) NOT NULL,
-  especie VARCHAR(50),
-  data_nascimento DATE
-);
-```
-
-Mudanças sintáticas, mesma finalidade.
-
----
-
-# 4. Ciclo de vida de um banco
-
-### 1. Construção (DDL)
+## 1. Construção (DDL)
 
 Definição de tabelas, colunas e relacionamentos.
 
-### 2. Manutenção (DML + ajustes DDL)
+## 2. Manutenção (DML + ajustes DDL)
 
-Inserções, edições e mudanças estruturais.
+Inserção, atualização e mudanças estruturais.
 
-### 3. Uso operacional (DQL)
+## 3. Uso operacional (DQL)
 
-Consultas, relatórios e métricas.
+Consultas e relatórios.
 
 ---
 
@@ -160,13 +144,13 @@ Consultas, relatórios e métricas.
 
 * **DDL** cria a base
 * **DML** mantém os dados ativos
-* **DQL** extrai informações úteis
+* **DQL** extrai informação útil
 
-As etapas se repetem conforme o sistema evolui.
+O ciclo se repete conforme o sistema evolui.
 
 ---
 
-# 5. NoSQL e SQL
+# 5. SQL e NoSQL
 
 ## Compatibilidade parcial
 
@@ -174,13 +158,13 @@ As etapas se repetem conforme o sistema evolui.
 * Apache Hive / Spark SQL
 * MongoDB com conectores SQL-like
 
-Facilita a integração de ambientes híbridos.
+Facilita integração híbrida.
 
 ---
 
-# Limitações e diferenças NoSQL
+# Limitações e diferenças
 
-* Esquema flexível (schema-less)
+* Estrutura flexível (schema-less)
 * JOINs limitados ou ausentes
 * Consistência eventual
 * Foco em escalabilidade horizontal
@@ -195,7 +179,7 @@ Cenários comuns:
 
 * Alto volume de dados
 * Alta disponibilidade
-* Estruturas variáveis
+* Estrutura variável
 * Dados distribuídos ou semiestruturados
 
 Muitos sistemas combinam **SQL + NoSQL**.
@@ -204,22 +188,22 @@ Muitos sistemas combinam **SQL + NoSQL**.
 
 # 6. Boas práticas
 
-✅ Versionamento de esquema
-✅ Ferramentas de migração
-✅ Princípio do menor privilégio
-✅ Ambientes separados (dev/teste/produção)
+* Versionamento de esquema
+* Ferramentas de migração
+* Princípio do menor privilégio
+* Ambientes separados (dev/teste/prod)
 
-Essas práticas evitam falhas e inconsistências.
+Evita falhas e inconsistências.
 
 ---
 
 # 7. Conclusão
 
-* DDL, DML e DQL formam a base dos bancos relacionais
-* Cada linguagem cumpre um papel específico
-* Dialetos SQL mudam forma, não finalidade
+* DDL, DML e DQL são complementares
+* Cada linguagem tem seu papel
+* Dialetos mudam a sintaxe, não a função
 * NoSQL complementa, não substitui
-* Boas práticas garantem segurança e longevidade
+* Boas práticas garantem integridade e longevidade
 
 ---
 
@@ -229,3 +213,8 @@ Essas práticas evitam falhas e inconsistências.
 * Elmasri & Navathe (2016)
 * Silberschatz, Korth & Sudarshan (2012)
 * Sadalage & Fowler (2012)
+
+<br><br>
+<span style="font-size: 0.5rem; opacity: 0.5;">
+Obrigado Éttore por nos apresentar o Marp :) 
+</span>
