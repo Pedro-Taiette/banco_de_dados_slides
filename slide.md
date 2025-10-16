@@ -8,8 +8,7 @@ paginate: true
 # color: #ffffffcc
 ---
 
-# A Interdependência de DDL, DML e DQL 
-## Evolução em Bancos Relacionais e Sistemas NoSQL
+# A dinâmica entre DDL, DML e DQL na evolução de bancos relacionais e sistemas NoSQL
 
 **Pedro Taiette Sato Librais (2000373)**
 **Thiago Henrique do Rego (2002255)**  
@@ -33,7 +32,7 @@ UNIMAR – 2025
 # 1. Contexto
 
 - Bancos de dados são base crítica
-- SQL é padrão dominante
+- SQL (Structured Query Language) é padrão dominante
 - Três subconjuntos centrais:
   - **DDL** — estrutura
   - **DML** — manipulação
@@ -55,7 +54,7 @@ Eles se complementam em momentos diferentes.
 
 ---
 
-# DDL — Definição de Estrutura
+# DDL — Data Definition Language
 
 Comandos: `CREATE`, `ALTER`, `DROP`
 
@@ -67,7 +66,7 @@ Responsável por:
 
 ---
 
-# DML — Manipulação de Dados
+# DML — Data Manipulation Language
 
 Comandos: `INSERT`, `UPDATE`, `DELETE`
 
@@ -81,7 +80,7 @@ Base das operações rotineiras em um sistema.
 
 ---
 
-# DQL — Leitura e Consulta
+# DQL — Data Query Language
 
 Comando principal: `SELECT`
 
@@ -131,7 +130,7 @@ WHERE data_nascimento > '2020-01-01';
 
 Definição de tabelas, colunas e relacionamentos.
 
-## 2. Manutenção (DML + ajustes DDL)
+## 2. Manipulação (DML + ajustes DDL)
 
 Inserção, atualização e mudanças estruturais.
 
@@ -148,6 +147,13 @@ Consultas e relatórios.
 * **DQL** extrai informação útil
 
 O ciclo se repete conforme o sistema evolui.
+
+---
+
+# Pensando em Minecraft...
+**DDL** - Construir o mapa/mundo
+**DML** - Adicionar e modificar os objetos/jogadores
+**DQL** - Procurar coisas no mapa ("Quantos mobs existem perto de mim?")
 
 ---
 
@@ -215,5 +221,4 @@ Evita falhas e inconsistências.
 * Sadalage & Fowler (2012)
 
 <br><br>
-Obrigado Éttore por nos apresentar o Marp :) 
-</span>
+* Obrigado Éttore por nos apresentar o Marp :) 
