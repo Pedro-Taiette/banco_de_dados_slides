@@ -3,7 +3,7 @@ marp: true
 theme: gaia
 # class: invert
 paginate: true
-# size: 16:9
+size: 16:9
 # backgroundColor: #000000ff
 # color: #ffffffcc
 ---
